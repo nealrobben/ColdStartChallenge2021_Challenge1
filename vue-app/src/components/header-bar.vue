@@ -8,9 +8,19 @@ export default {
   },
   data() {
     return {
+		user: ''
     };
   },
+  async created() {
+    await this.getUser();
+  },
   methods: {
+	async  getUser() {
+         const response = await fetch("/.auth/me");
+         const payload = await response.json();
+         const { clientPrincipal } = payload;
+         this.user = clientPrincipal;
+        }
   },
 };
 </script>
