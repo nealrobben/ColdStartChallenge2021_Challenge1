@@ -13,6 +13,8 @@ module.exports = {
     'consistent-return': 0,
     'linebreak-style': 'off',
 	'no-mixed-spaces-and-tabs': 0, // disable rule
+	'no-tabs': 'off',
+	'max-len': 'off'
     quotes: [2, 'single', { avoidEscape: true, allowTemplateLiterals: true }],
     // 'prettier/prettier': [
     //   'error',
