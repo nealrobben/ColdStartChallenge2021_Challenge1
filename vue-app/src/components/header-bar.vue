@@ -22,7 +22,7 @@ export default {
       <div class="navbar-menu">
         <div class="navbar-start">
           <router-link class="navbar-item nav-home" to="/">Home</router-link>
-	  <router-link class="navbar-item nav-home" to="/.auth/login/github">Login with Github</router-link>
+		  <a href="/.auth/login/github">Login</a>
         </div>
       </div>
     </nav>
