@@ -22,8 +22,16 @@ export default {
       <div class="navbar-menu">
         <div class="navbar-start">
           <router-link class="navbar-item nav-home" to="/">Home</router-link>
-		  <a href="/.auth/login/github">Login</a>
-		  <a href="/.auth/logout">Log out</a>
+		  <div v-if="user.userDetails">
+			<p>User: {{ user.userDetails }}</p>
+		  </div>
+		  <div>
+			<a href="/.auth/login/github">Login</a>
+		  </div>
+		  <br />
+		  <div>
+			<a href="/.auth/logout">Log out</a>
+		  </div>
         </div>
       </div>
     </nav>
