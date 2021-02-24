@@ -30,7 +30,7 @@ export default {
          const payload = await response.json();
          const { clientPrincipal } = payload;
          this.user = clientPrincipal;
-        };
+        },
 		
 	placeOrder: function (icecreamId) {
       // `this` inside methods points to the Vue instance
