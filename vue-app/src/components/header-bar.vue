@@ -35,12 +35,11 @@ export default {
 		  <div v-if="user.userDetails">
 			<p>User: {{ user.userDetails }}</p>
 		  </div>
-		  <div>
-			<a href="/.auth/login/github">Login</a>
-		  </div>
-		  <br />
-		  <div>
+		  <div v-if="user.userDetails">
 			<a href="/.auth/logout">Log out</a>
+		  </div>
+		  <div v-else>
+			<a href="/.auth/login/github">Login</a>
 		  </div>
         </div>
       </div>
