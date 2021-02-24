@@ -54,7 +54,7 @@ export default {
             :imageurl="icecream.ImageUrl"
           />
 		  <div v-if="user && user.userDetails">
-			<a href="/" >Buy></a>
+			<a href="/">Buy</a>
 		  </div>
         </div>
       </div>
