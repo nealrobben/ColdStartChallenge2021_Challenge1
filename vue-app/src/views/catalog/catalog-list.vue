@@ -34,7 +34,20 @@ export default {
 		
 	placeOrder: function (icecreamId) {
       // `this` inside methods points to the Vue instance
-      alert('Icecream id: ' + icecreamId + '!');
+      //alert('Icecream id: ' + icecreamId + '!');
+	  
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", '/orders', true);
+
+		//Send the proper header information along with the request
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+		xhr.onreadystatechange = function() { // Call a function when the state changes.
+			if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+				// Request finished. Do processing here.
+			}
+		}
+		xhr.send("icecreamid="+icecreamId);	  
     }
   },
 };
