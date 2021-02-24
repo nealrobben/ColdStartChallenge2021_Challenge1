@@ -37,7 +37,7 @@ export default {
       //alert('Icecream id: ' + icecreamId + '!');
 	  
 		var xhr = new XMLHttpRequest();
-		xhr.open("POST", '/orders', true);
+		xhr.open("POST", '/api/orders', true);
 
 		//Send the proper header information along with the request
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
