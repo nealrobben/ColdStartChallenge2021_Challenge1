@@ -30,7 +30,12 @@ export default {
          const payload = await response.json();
          const { clientPrincipal } = payload;
          this.user = clientPrincipal;
-        }
+        };
+		
+	placeOrder: function (icecreamId) {
+      // `this` inside methods points to the Vue instance
+      alert('Icecream id: ' + icecreamId + '!');
+    }
   },
 };
 </script>
@@ -54,7 +59,7 @@ export default {
             :imageurl="icecream.ImageUrl"
           />
 		  <div v-if="user && user.userDetails">
-			<a href="/">Buy</a>
+			<button v-on:click="placeOrder(icecream.Id)">Buy</button>
 		  </div>
         </div>
       </div>

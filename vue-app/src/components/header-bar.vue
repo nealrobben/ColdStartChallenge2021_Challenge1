@@ -35,7 +35,8 @@ export default {
 		  <div v-if="user.userDetails">
 			<p>User: {{ user.userDetails }}</p>
 		  </div>
-		  <div v-if="user.userDetails">
+		  &nbsp;
+		  <div v-if="user && user.userDetails">
 			<a href="/.auth/logout">Log out</a>
 		  </div>
 		  <div v-else>
