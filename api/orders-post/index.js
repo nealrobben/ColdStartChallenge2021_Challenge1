@@ -1,20 +1,27 @@
 const { getUser } = require('../shared/user-utils');
 const { QueueClient } = require("@azure/storage-queue");
-//const uuidv1 = require("uuid/v1");
+const uuidv1 = require("uuid/v1");
 
 module.exports = async function (context, req) {
   // Get the user details from the request
   const user = getUser(req);
 
-  // Get the pre-order from the request
-  
-  
-  // TODO: add the pre-order JSON document in a queue
-  
   const connectionString = "DefaultEndpointsProtocol=https;AccountName=cscchallenge1;AccountKey=6y4UPgZHkguAyR9rDWqH0VfirDI+oBZz+3AK8clTzmXsUkUmgo23O7x/IHsHfziRGpoH+I+lIahXaaLQY/606w==;EndpointSuffix=core.windows.net"
   const queueClient = new QueueClient(connectionString, "orders");
   
-  await queueClient.sendMessage('test');
+  // Get the pre-order from the request
+  const order = {
+    Id: uuidv1(),
+    User: user.userDetails,
+    Date: new Date().toJSON(),
+    IcecreamId: req.body.icecreamId,
+    Status: 'New',
+    DriverId: null,
+    FullAddress: '1 Microsoft Way, Redmond, WA 98052, USA',
+    LastPosition: null,
+  };
+
+  await queueClient.sendMessage(JSON.stringify(order));
   
   context.res.status(201);
 };
