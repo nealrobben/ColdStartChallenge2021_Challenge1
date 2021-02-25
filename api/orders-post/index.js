@@ -1,6 +1,6 @@
 const { getUser } = require('../shared/user-utils');
 const { QueueClient } = require("@azure/storage-queue");
-//const uuidv1 = require("uuid/v1");
+const { v4: uuidv4 } = require('uuid');
 
 module.exports = async function (context, req) {
   // Get the user details from the request
@@ -11,7 +11,7 @@ module.exports = async function (context, req) {
   
   // Get the pre-order from the request
   const order = {
-    //Id: uuidv1(),
+    Id: uuidv4(),
     User: user.userDetails,
     Date: new Date().toJSON(),
     IcecreamId: req.body.icecreamId,
