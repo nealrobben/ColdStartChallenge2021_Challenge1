@@ -14,7 +14,7 @@ module.exports = async function (context, req) {
     Id: uuidv4(),
     User: user.userDetails,
     Date: new Date().toJSON(),
-    IcecreamId: req.Query["icecreamid"],
+    IcecreamId: req.body.icecreamid,
     Status: 'New',
     DriverId: null,
     FullAddress: '1 Microsoft Way, Redmond, WA 98052, USA',
