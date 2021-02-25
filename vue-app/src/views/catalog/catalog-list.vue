@@ -40,7 +40,7 @@ export default {
 		xhr.open("POST", '/api/orders', true);
 
 		//Send the proper header information along with the request
-		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
 		xhr.onreadystatechange = function() { // Call a function when the state changes.
 			if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
