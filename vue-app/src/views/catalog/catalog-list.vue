@@ -47,7 +47,12 @@ export default {
 				// Request finished. Do processing here.
 			}
 		}
-		xhr.send("{icecreamId: " + icecreamId + " }");	  
+		
+		var payload = {
+			icecreamId: icecreamId
+		}
+		
+		xhr.send(JSON.stringify(payload));  
     }
   },
 };
